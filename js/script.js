@@ -71,52 +71,52 @@ function calculate() {
   event.preventDefault();
 
   const form = document.forms["spkForm"];
-  // const karyawan = form["karyawan[]"];
-  // const appraisal = form["appraisal[]"];
-  // const posisi = form["posisi[]"];
-  // const absensi = form["absensi[]"];
-  // const bpjs = form["bpjs[]"];
+  const karyawan = form["karyawan[]"];
+  const appraisal = form["appraisal[]"];
+  const posisi = form["posisi[]"];
+  const absensi = form["absensi[]"];
+  const bpjs = form["bpjs[]"];
 
   // Simulasi data yang seolah-olah dimasukkan
-  const karyawan = [
-    { value: "A1 Ikan Mas" },
-    { value: "A2 Ikan Lele" },
-    { value: "A3 Ikan Patin" },
-    { value: "A4 Ikan Nila" },
-    { value: "A5 Ikan Gurame" },
-  ];
+  // const karyawan = [
+  //   { value: "A1 Ikan Mas" },
+  //   { value: "A2 Ikan Lele" },
+  //   { value: "A3 Ikan Patin" },
+  //   { value: "A4 Ikan Nila" },
+  //   { value: "A5 Ikan Gurame" },
+  // ];
 
-  const appraisal = [
-    { value: "3" },
-    { value: "4" },
-    { value: "3" },
-    { value: "4" },
-    { value: "3" },
-  ];
+  // const appraisal = [
+  //   { value: "3" },
+  //   { value: "4" },
+  //   { value: "3" },
+  //   { value: "4" },
+  //   { value: "3" },
+  // ];
 
-  const posisi = [
-    { value: "3" },
-    { value: "3" },
-    { value: "2" },
-    { value: "1" },
-    { value: "1" },
-  ];
+  // const posisi = [
+  //   { value: "3" },
+  //   { value: "3" },
+  //   { value: "2" },
+  //   { value: "1" },
+  //   { value: "1" },
+  // ];
 
-  const absensi = [
-    { value: "2" },
-    { value: "4" },
-    { value: "2" },
-    { value: "3" },
-    { value: "3" },
-  ];
+  // const absensi = [
+  //   { value: "2" },
+  //   { value: "4" },
+  //   { value: "2" },
+  //   { value: "3" },
+  //   { value: "3" },
+  // ];
 
-  const bpjs = [
-    { value: "4" },
-    { value: "3" },
-    { value: "3" },
-    { value: "2" },
-    { value: "4" },
-  ];
+  // const bpjs = [
+  //   { value: "4" },
+  //   { value: "3" },
+  //   { value: "3" },
+  //   { value: "2" },
+  //   { value: "4" },
+  // ];
 
   // Menggabungkan data menjadi satu objek untuk setiap karyawan
   const data = [];
