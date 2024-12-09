@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SPK Perpanjangan Kontrak - ORESTE</title>
+        <link rel="stylesheet" href="./style/newstyle.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Sistem Perhitungan Oreste</h1>
+                <p>Menggunakan metode Oreste untuk Penentuan Budidaya Ikan Air
+                    Tawar</p>
+            </div>
+
+            <form id="spkForm">
+                <div class="employee-form">
+                    <div class="btn-container">
+                        <a href="./beranda.html" class="badge"
+                            style="margin-bottom: 8px;">back</a>
+                    </div>
+                    <div class="table-container">
+                        <table id="employeeTable">
+                            <thead>
+                                <tr>
+                                    <th>Alternatif</th>
+                                    <th>Suhu Air (°C)</th>
+                                    <th>Kecerahan Air (M)</th>
+                                    <th>Oksigen Terlarut (mg/L)</th>
+                                    <th>pH air (mg/L)</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataInput">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-container">
+                        <div>
+                            <button class="btn btn-add" type="button"
+                                onclick="addRow()">Tambah Baris</button>
+                            <button class="btn btn-add" type="button"
+                                onclick="kriteria()">Lihat Kriteria</button>
+                            <a href="#ranking" class="btn btn-ranking"
+                                id="btnRangking"
+                                style="display: none;">Peringkat Akhir</a>
+                        </div>
+                        <button type="button" class="btn btn-calculate"
+                            onclick="hitung()">Hitung Peringkat</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="bobot-section">
+                <div class="employee-form">
+                    <h3>Tabel 1. Kriteria Perpanjangan
+                        Kontrak Karyawan</h3>
+                    <table>
+                        <tr>
+                            <th>Kode</th>
+                            <th>Kriteria</th>
+                            <th>Bobot</th>
+                            <th>Sub Kri-teria</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>C1</td>
+                            <td>Suhu Air (°C)</td>
+                            <td>0,35</td>
+                            <td>0 -11</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>11 - 20</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>21 - 25</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>25 - 30</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>C2</td>
+                            <td>Kecerahan Air (M)</td>
+                            <td>0,20</td>
+                            <td>0 - 0,5</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>0,6 - 1</td>
+                            <td>2</td>
+                        </tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1,1 - 1,5</td>
+                            <td>3</td>
+                        </tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1,6 - 2</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>C3</td>
+                            <td>Oksigen Terlarut (mg/L)</td>
+                            <td>0,25</td>
+                            <td>1 - 2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>3 - 4</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>4 - 5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>> 5</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>C4</td>
+                            <td>pH air (mg/L)</td>
+                            <td>0,20</td>
+                            <td>0 - 2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>3 - 5</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>5 - 6,5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>6,6 - 8,5</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="employee-form">
+                    <div class="result-table">
+                        <h3>Tabel 2. Data Penilaian Untuk Budidaya Ikan Air Tawar</h3>
+                        <div id="dataTable"></div>
+                    </div>
+                </div>
+                <div class="employee-form">
+                    <div class="result-table">
+                        <h2 class="text-center">Besson Rank</h2>
+                        <h3>Tabel 3. Perhitungan Besson Rank pada Kriteria
+                            Suhu Air (°C)</h3>
+                        <div id="tabelRankAppraisal"></div>
+                        <h3>Tabel 4. Perhitungan Besson Rank pada Kriteria
+                            Kecerahan Air (M)</h3>
+                        <div id="tabelRankPosisi"></div>
+                        <h3>Tabel 5. Perhitungan Besson Rank pada Kriteria
+                            Oksigen Terlarut (mg/L)</h3>
+                        <div id="tabelRankAbsensi"></div>
+                        <h3>Tabel 6. Perhitungan Besson Rank pada Kriteria
+                            pH air (mg/L)</h3>
+                        <div id="tabelRankBPJS"></div>
+                    </div>
+                </div>
+                <div class="employee-form">
+                    <div class="result-table">
+                        <h2 class="text-center">Normalisasi Besson Rank</h2>
+                        <h3>Tabel 7. Hasil Normalisasi dari Besson Rank</h3>
+                        <div id="tabelBessonRank"></div>
+                    </div>
+                </div>
+                <div class="employee-form">
+                    <div class="result-table">
+                        <h2 class="text-center">Distance Score</h2>
+                        <h3>Tabel 8. Hasil Akumulasi Nilai Distance Score</h3>
+                        <div id="tabelDistanceScore"></div>
+                    </div>
+                </div>
+                <div class="employee-form">
+                    <div class="result-table">
+                        <h2 class="text-center" id="ranking">Hasil Akhir</h2>
+                        <h3>Tabel 9. Perangkingan Metode Oreste</h3>
+                        <div id="tabelPerangkingan"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.onload = () => {
+             addRow()
+            };
+          </script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

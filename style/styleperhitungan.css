@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6e3;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+  background-color: #ffb6b9; /* Warna pink pastel */
+  padding: 20px 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-title {
+  font-family: "acme-sans serif";
+  font-size: 2.5em;
+}
+h1,
+h2 {
+  text-align: center;
+  color: #333333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th,
+table td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+}
+
+table th {
+  background-color: #baa6a6;
+}
+
+/* button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color:  #FFD700;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+.btn {
+  background-color: #ffd700; /* Warna kuning cerah */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff6f61; /* Warna coral saat dihover */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
